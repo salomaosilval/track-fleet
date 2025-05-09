@@ -1,6 +1,7 @@
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
 
 const Header = () => {
   return (
@@ -28,22 +29,26 @@ const Header = () => {
             defaultValue="tracked"
             className="flex flex-row gap-4 ml-6"
           >
-            <label className="flex items-center gap-2 text-white cursor-pointer">
+            <div className="flex items-center space-x-2">
               <RadioGroupItem
                 value="tracked"
                 id="tracked"
                 className="accent-[#00B4D8]"
               />
-              Rastreados
-            </label>
-            <label className="flex items-center gap-2 text-white cursor-pointer">
+              <Label htmlFor="tracked" className="text-white cursor-pointer">
+                Rastreados
+              </Label>
+            </div>
+            <div className="flex items-center space-x-2">
               <RadioGroupItem
                 value="others"
                 id="others"
                 className="accent-[#00B4D8]"
               />
-              Outros
-            </label>
+              <Label htmlFor="others" className="text-white cursor-pointer">
+                Outros
+              </Label>
+            </div>
           </RadioGroup>
         </div>
         <div className="flex items-center gap-2 w-full md:w-auto mt-4 md:mt-0">
