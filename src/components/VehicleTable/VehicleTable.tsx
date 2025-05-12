@@ -19,7 +19,7 @@ const VehicleTable = ({ vehicles, isLoading, error }: VehicleTableProps) => {
   );
 
   return (
-    <div className="w-[90%] mx-auto overflow-x-auto rounded-lg border border-[#001E2E] bg-[var(--color-primary-bg)] mt-8">
+    <div className="w-[90%] mx-auto overflow-x-auto rounded-lg border border-[#2A4156] bg-[var(--color-primary-bg)] mt-8">
       <Table>
         <TableHeader>
           <TableRow>

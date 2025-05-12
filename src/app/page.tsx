@@ -2,6 +2,7 @@
 
 import { Header, VehicleTable } from "@/components";
 import useGetVehicles from "@/api/vehicles/useGetVehicles";
+import { VehicleMap } from "@/components/VehicleMap";
 
 const Home = () => {
   const { data, isLoading, error } = useGetVehicles({
@@ -16,11 +17,14 @@ const Home = () => {
     <>
       <Header />
       {data && (
-        <VehicleTable
-          vehicles={data.vehicles}
-          isLoading={isLoading}
-          error={error}
-        />
+        <>
+          <VehicleMap locations={data.locationVehicles} />
+          <VehicleTable
+            vehicles={data.vehicles}
+            isLoading={isLoading}
+            error={error}
+          />
+        </>
       )}
     </>
   );

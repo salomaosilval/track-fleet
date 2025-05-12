@@ -146,3 +146,23 @@
   background: var(--color-scrollbar);
   border-radius: 4px;
 }
+
+.gm-style-iw,
+.gm-style-iw-c,
+.gm-style-iw-d,
+.gm-style-iw-t {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+.gm-style-iw-t::after,
+.gm-style-iw-t::before {
+  display: none !important;
+}
+
+.gm-ui-hover-effect {
+  display: none !important;
+}
