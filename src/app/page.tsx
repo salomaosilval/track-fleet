@@ -1,19 +1,27 @@
 "use client";
 
-import { useGetVehicles } from "@/api/vehicles";
-import { Header } from "@/components";
+import { Header, VehicleTable } from "@/components";
+import useGetVehicles from "@/api/vehicles/useGetVehicles";
 
-export default function Home() {
+const Home = () => {
   const { data, isLoading, error } = useGetVehicles({
     type: "tracked",
     page: 1,
-    perPage: 10,
+    perPage: 40,
   });
-
-  if (isLoading) return <div>Carregando...</div>;
-  if (error) return <div>Erro ao buscar veículos</div>;
 
   console.log(data);
 
-  return <Header />;
-}
+  return (
+    <>
+      <Header />
+      {isLoading && <div className="text-white mt-8">Carregando...</div>}
+      {error && (
+        <div className="text-red-500 mt-8">Erro ao buscar veículos</div>
+      )}
+      {data && <VehicleTable vehicles={data.vehicles} />}
+    </>
+  );
+};
+
+export default Home;
