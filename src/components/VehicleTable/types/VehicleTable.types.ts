@@ -8,4 +8,6 @@ export interface Column {
 
 export interface VehicleTableProps {
   vehicles: Vehicle[];
+  isLoading?: boolean;
+  error?: Error | null;
 }

@@ -15,11 +15,13 @@ const Home = () => {
   return (
     <>
       <Header />
-      {isLoading && <div className="text-white mt-8">Carregando...</div>}
-      {error && (
-        <div className="text-red-500 mt-8">Erro ao buscar veículos</div>
+      {data && (
+        <VehicleTable
+          vehicles={data.vehicles}
+          isLoading={isLoading}
+          error={error}
+        />
       )}
-      {data && <VehicleTable vehicles={data.vehicles} />}
     </>
   );
 };
